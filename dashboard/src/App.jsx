@@ -1,14 +1,37 @@
-import Sidebar from "./components/Sidebar"
+import Login from "./components/Login"
+import {Routes,Route} from "react-router-dom"
+import DashboardOn from "./components/DashboardOn"
+import Home from "./components/Home"
+import Profile from "./components/Profile"
+import Trending from "./components/Trending"
+
 
 function App() {
 
   return (
-    <div className="grid grid-cols-6 min-h-screen ">
-      <Sidebar/>  
-     <main>the content
-      </main>  
-    </div>
+<div>
+   <Routes>
+    <Route path="/" element={<Login/>}/>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/dashboardon" element={<DashboardOn/>}>
 
+    <Route path="/dashboardon" element={<Home/>}/>
+    <Route path="/dashboardon/profile" element={<Profile/>}/>
+    <Route path="/dashboardon/trending" element={<Trending/>}/>
+
+    </Route>
+ 
+
+  </Routes>
+   
+
+
+
+</div>
+  
+
+
+ 
   )
 }
 
