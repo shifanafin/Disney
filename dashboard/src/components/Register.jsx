@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
@@ -17,6 +19,9 @@ const [formErrors, setFormErrors] = useState({
     Password: '',
     confirmPassword: ''
   });
+
+  const navigate = useNavigate()
+
 
 
 
@@ -60,13 +65,32 @@ const [formErrors, setFormErrors] = useState({
     }
   };
 
+  const dispatch = useDispatch()
+  const register = ()=>
+  {
+    dispatch({
+      
+          type : "REGISTER",
+          payload:formData
+            
+          
+     
+    })
+  navigate("/login")
+
+  }
+
+ 
+
   
   return (
     <div>
 
 <section className=' min-h-screen flex items-center justify-center  '>
+
             {/*Login Container*/}
             <div className='bg-blue-100 shadow-lg max-w-3xl flex rounded-2xl p-5' >
+           
             {/*Login Form*/}
             <div className=' px-16'>
                 <h2 className='font-bold text-2xl '>Register To The Dream</h2>
@@ -82,7 +106,7 @@ const [formErrors, setFormErrors] = useState({
                     id='userName'
                     value={formData.userName}
                     placeholder='Enter Name'
-                    
+                    autoComplete='off'
                     onChange={handleChange}
                     />
                      {formErrors.userName && <p>{formErrors.userName}</p>}
@@ -113,7 +137,7 @@ const [formErrors, setFormErrors] = useState({
                     />
                      {formErrors.confirmPassword && <p>{formErrors.confirmPassword}</p>}
 
-                   <button to="/"
+                   <button onClick={register}
                    className='bg-blue-300 p-3 rounded-3xl mt-5 hover:text-white font-bold font-serif'>
                     Register     
                     </button>

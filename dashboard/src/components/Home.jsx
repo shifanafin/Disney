@@ -1,88 +1,8 @@
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// const Home = () => {
-//   const [users, setUsers] = useState([]);
- 
-  
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const result = await axios.get(' http://localhost:3008/user');
-//         setUsers(result.data);
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   return (
-//     <div>
-//       {users.map(user => (
-//         <div key={user.id}>
-//           <h2>{user.userName}</h2>
-//           <ul>
-//             {user.shows.map(show => (
-//               <li key={show.id}>
-//                 <h3>{show.name}</h3>
-//                 <img src={show.img} alt="i" />
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-      
-
-
-// export default Home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import Register from './Register';
 import React, { useEffect,useState } from 'react'
 import cind from "./cind.jpg"
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 
@@ -100,6 +20,7 @@ const Home = () => {
     };
     fetchData();
   }, []);
+ 
 
   return (
     <div className=" grid grid-cols-3  ">
@@ -109,7 +30,7 @@ const Home = () => {
               
           {item.shows.map(show=>(
             
-              <div  className='group group/item singleJob w-[250px] p-[20px]  bg-white rounded-[10px] hover:bg-purple-200 shadow-lg shadow-greyIsh
+              <div key={show.id}  className='group group/item singleJob w-[250px] p-[20px]  bg-white rounded-[10px] hover:bg-purple-200 shadow-lg shadow-greyIsh
               -400/700 hover:shadow-lg'  >
                   <span className='block justify-between items-center gap-4 '>
                       <img src={show.img} alt="Cindrella"  />
@@ -132,6 +53,8 @@ const Home = () => {
 
      </div>
      ))} 
+
+
     </div>
   )
 }
