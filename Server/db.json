@@ -1,21 +1,39 @@
 {
     "user": [
       { "id": 1,
-       "name": "cindrella",
-       "password": "cindrella"
+       "userName": "cindrella",
+       "Password": "123",
+       "confirmPassword":"123",
+       "shows":[{
+        "id":"1",
+        "name":"cindrella",
+        "img":"https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8AB4F3DB52D5E8A99E8D3082EBB07E226AE603DBBA29070346DE9F9B5D7E1270/scale?width=1200&aspectRatio=1.78&format=jpeg"
+       },
+       {
+        "id":"2",
+       "name":"Sleeping Beauty",
+       "img":"https://upload.wikimedia.org/wikipedia/commons/7/78/Prince_Florimund_finds_the_Sleeping_Beauty_-_Project_Gutenberg_etext_19993.jpg"
+      }]
+
      
      },
       { "id": 2,
-       "name": "mikey",
-        "password": "mikey"
-     },
-      { "id": 3,
-       "title": "json-server",
-        "author": "typicode"
-     },
-      { "id": 4,
-       "title": "json-server",
-        "author": "typicode"
+       "userName": "elsa",
+        "Password": "123",
+        "confirmPassword":"123",
+        "shows":[
+          {
+            "id":"1",
+            "name":"Anna's Journey to elsa",
+            "img":"https://m.media-amazon.com/images/M/MV5BMjY3YTk5MjUtODBjOC00NzAwLTgyYjYtMzFmMzAxOTZmOWRlXkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_.jpg"
+
+          },
+          {
+            "id":"2",
+            "name":"Magical Creator from Frozen",
+            "img":"https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Frozen_II_%282019_animated_film%29.jpg/220px-Frozen_II_%282019_animated_film%29.jpg"
+
+          }]
      }
     ]
   }
